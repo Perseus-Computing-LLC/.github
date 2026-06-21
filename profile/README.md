@@ -1,25 +1,44 @@
-# Perseus Computing LLC
-
-Building infrastructure for AI agents. Context engines, persistent memory, and tool intelligence — open source, local-first, protocol-native.
-
-[persues.observer](https://perseus.observer) · [PyPI](https://pypi.org/project/perseus-ctx/) · [MCP Registry](https://registry.modelcontextprotocol.io/)
-
----
-
-## Products
-
-| Project | Description |
-|---|---|
-| **[Perseus](https://github.com/Perseus-Computing-LLC/perseus)** | Live context engine — resolves environment state before an AI assistant opens a file. |
-| **[Mimir](https://github.com/Perseus-Computing-LLC/mimir)** | Persistent memory for AI agents. MCP-native. SQLite + FTS5. |
-| **[MCTS](https://github.com/Perseus-Computing-LLC/MCTS)** | Model Context Threat Scanner — security scanning for MCP server registries. |
-| **[PR Pilot](https://github.com/Perseus-Computing-LLC/pr-pilot)** | AI-native code quality — 5-agent autonomous PR review pipeline. |
+<div align="center">
+  <h1>Perseus Computing</h1>
+  <p><strong>Live context engine for AI agents.</strong> Open source infrastructure for verifiable, audit-ready agent state.</p>
+  <br>
+  <p>
+    <a href="https://perseus.observer"><img src="https://img.shields.io/badge/website-perseus.observer-a78bfa?style=flat-square" alt="Website"></a>
+    <a href="https://github.com/Perseus-Computing-LLC/perseus/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License"></a>
+    <a href="https://pypi.org/project/perseus-ctx/"><img src="https://img.shields.io/badge/pypi-perseus--ctx-a78bfa?style=flat-square" alt="PyPI"></a>
+  </p>
+</div>
 
 ---
 
-## Philosophy
+## What we build
 
-- **Local-first.** No cloud dependencies. Everything runs on your machine.
-- **Protocol-native.** MCP from day one. Works with any MCP-compatible agent.
-- **Real metrics.** Every stat card backed by measured data, not pitch-deck numbers.
-- **Open source.** MIT licensed. Built in the open.
+### [Perseus](https://github.com/Perseus-Computing-LLC/perseus) — Live Context Engine
+Renders workspace state into static facts before your AI agent's context window opens. No orientation tax. No stale docs. Just instant, verifiable context. MIT licensed. On-premise.
+
+### [Mimir](https://github.com/Perseus-Computing-LLC/mimir) — Persistent Memory
+Zero-dependency persistent memory for AI agents. SQLite + FTS5. AES-256-GCM encrypted. 36 MCP tools. Sub-millisecond recall. Single portable `mimir.db` file.
+
+### [MCTS](https://github.com/Perseus-Computing-LLC/mcts) — Security Scanner
+Model Context Threat Scanner. Static analysis for MCP servers. 18 analyzers catching injection, exposed secrets, unverified tool inputs. Run before you trust an MCP server.
+
+### [PR Pilot](https://github.com/Perseus-Computing-LLC/pr-pilot) — Autonomous Review
+5-agent pipeline: reviewer → fixer → tester → verifier → escalator. Autonomous PR review that finds bugs, writes fixes, verifies deployments, and escalates when blocked.
+
+### [Blast Radius](https://github.com/Perseus-Computing-LLC/blast-radius) — Impact Analysis
+GitLab Orbit-powered dependency graph analyzer. See exactly what breaks before you change code.
+
+### [Plutus](https://github.com/Perseus-Computing-LLC/plutus) — Credit Monitoring
+Multi-provider LLM credit balance tracking. Real-time balance checks, burn-rate forecasts. Never run out of credits mid-session.
+
+---
+
+## For Government
+
+[Government procurement page →](https://perseus.observer/gov-landing.html)
+
+- SBOMs published per EO 14028
+- NIST AI RMF aligned (all four functions)
+- EAR99 self-classified — no ITAR restrictions
+- Air-gap ready — zero cloud dependencies
+- MIT licensed — no vendor lock-in
