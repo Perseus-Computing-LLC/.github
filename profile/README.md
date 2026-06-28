@@ -17,18 +17,18 @@
 Renders workspace state into static facts before your AI agent's context window opens. No orientation tax. No stale docs. Just instant, verifiable context. MIT licensed. On-premise.
 
 ### [Mimir](https://github.com/Perseus-Computing-LLC/mimir) — Persistent Memory
-Zero-dependency persistent memory for AI agents. SQLite + FTS5. AES-256-GCM encrypted. 36 MCP tools. Sub-millisecond recall. Single portable `mimir.db` file.
+Zero-dependency persistent memory for AI agents. SQLite + FTS5. AES-256-GCM encrypted. 43 MCP tools. Sub-millisecond recall. Single portable `mimir.db` file.
 
 ### [Plutus](https://github.com/Perseus-Computing-LLC/plutus) — Credit Monitoring
 Multi-provider LLM credit balance tracking. Real-time balance checks, burn-rate forecasts. Never run out of credits mid-session.
 
 ### [MCTS](https://github.com/Perseus-Computing-LLC/mcts) — Security Scanner
-Model Context Threat Scanner. Static analysis for MCP servers. 18 analyzers catching injection, exposed secrets, unverified tool inputs. Run before you trust an MCP server.
+Model Context Threat Scanner. Static analysis for MCP servers. 31 analyzers catching injection, exposed secrets, unverified tool inputs. Run before you trust an MCP server.
 
 ### [PR Pilot](https://github.com/Perseus-Computing-LLC/pr-pilot) — Autonomous Review
 5-agent pipeline: reviewer → fixer → tester → verifier → escalator. Autonomous PR review that finds bugs, writes fixes, verifies deployments, and escalates when blocked.
 
-### [Blast Radius](https://github.com/Perseus-Computing-LLC/blast-radius) — Impact Analysis
+### [Blast Radius](https://github.com/Perseus-Computing-LLC/blast-radius-agent) — Impact Analysis
 GitLab Orbit-powered dependency graph analyzer. See exactly what breaks before you change code.
 
 ---
