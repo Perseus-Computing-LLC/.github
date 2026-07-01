@@ -16,8 +16,8 @@
 ### [Perseus](https://github.com/Perseus-Computing-LLC/perseus) — Live Context Engine
 Renders workspace state into static facts before your AI agent's context window opens. No orientation tax. No stale docs. Just instant, verifiable context. MIT licensed. On-premise.
 
-### [Mneme](https://github.com/Perseus-Computing-LLC/mneme) — Persistent Memory
-Zero-dependency persistent memory for AI agents (formerly "Mimir"). SQLite + FTS5. AES-256-GCM encrypted. 46 MCP tools. Sub-millisecond recall. Single portable `mneme.db` file.
+### [Perseus Vault](https://github.com/Perseus-Computing-LLC/perseus-vault) — Persistent Memory
+Zero-dependency persistent memory for AI agents (formerly "Mimir"/"Mneme"). SQLite + FTS5. AES-256-GCM encrypted. 46 MCP tools. Sub-millisecond recall. Single portable `perseus-vault.db` file.
 
 ### [Plutus](https://github.com/Perseus-Computing-LLC/plutus) — Credit Monitoring
 Multi-provider LLM credit balance tracking. Real-time balance checks, burn-rate forecasts. Never run out of credits mid-session.
