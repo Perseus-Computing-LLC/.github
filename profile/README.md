@@ -25,7 +25,7 @@ Renders workspace state into verified facts before your AI agent's context windo
 Zero-dependency, encrypted persistent memory for AI agents (formerly "Mimir"/"Mnēmē"). SQLite + FTS5, AES-256-GCM, sub-millisecond recall in one portable file. 55 MCP tools. Single Rust binary.
 
 ### [Plutus](https://github.com/Perseus-Computing-LLC/plutus) — Credit &amp; Spend Monitor
-Multi-provider LLM credit tracking with burn-rate forecasts and runway-aware model routing. Never run out mid-session. `pip install plutus-agent`. MIT licensed.
+Self-hosted usage metering and prepaid-credit billing for LLM/agent spend. Meters every call, prices it, and depletes prepaid credit — with a live spend dashboard, per-provider breakdowns, and low-balance alerts. `pip install plutus-agent`. MIT licensed.
 
 ---
 
