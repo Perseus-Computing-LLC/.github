@@ -29,19 +29,6 @@ Self-hosted usage metering and prepaid-credit billing for LLM/agent spend. Meter
 
 ---
 
-## More from Perseus Computing
-
-### [MCTS](https://github.com/Perseus-Computing-LLC/MCTS) — Security Scanner
-Model Context Threat Scanner. Local-first static and live analysis for MCP servers. 30+ analyzers catching injection, exposed secrets, and unverified tool inputs. JSON, SARIF, and HTML output. Run it before you trust an MCP server.
-
-### [PR Pilot](https://github.com/Perseus-Computing-LLC/pr-pilot) — Autonomous Review
-5-agent pipeline: reviewer → fixer → tester → verifier → escalator. Autonomous PR review that finds bugs, writes fixes, verifies deployments, and escalates when blocked.
-
-### [Blast Radius](https://github.com/Perseus-Computing-LLC/blast-radius-agent) — Impact Analysis
-GitLab Orbit-powered dependency graph analyzer. See exactly what breaks before you change code.
-
----
-
 ## For Government
 
 [Government procurement page →](https://perseus.observer/government/)
