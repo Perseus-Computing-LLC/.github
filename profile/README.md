@@ -22,7 +22,7 @@
 Renders workspace state into verified facts before your AI agent's context window opens. No orientation tax. No stale docs. Just instant, inspectable context. `pip install perseus-ctx`. MIT licensed. Local-first.
 
 ### [Perseus Vault](https://github.com/Perseus-Computing-LLC/perseus-vault) — Persistent Memory
-Zero-dependency, encrypted persistent memory for AI agents (formerly "Mimir"/"Mnēmē"). SQLite + FTS5, AES-256-GCM, sub-millisecond recall in one portable file. 55 MCP tools. Single Rust binary.
+Zero-dependency, encrypted persistent memory for AI agents. SQLite + FTS5, AES-256-GCM, sub-millisecond recall in one portable file. 55 MCP tools. Single Rust binary.
 
 ### [Plutus](https://github.com/Perseus-Computing-LLC/plutus) — Credit &amp; Spend Monitor
 Self-hosted usage metering and prepaid-credit billing for LLM/agent spend. Meters every call, prices it, and depletes prepaid credit — with a live spend dashboard, per-provider breakdowns, and low-balance alerts. `pip install plutus-agent`. MIT licensed.
