@@ -1,40 +1,50 @@
-<div align="center">
-  <img src="./assets/org-hero.png" alt="Perseus Computing — Live context infrastructure for AI agents. Local-first, air-gap ready, zero telemetry, open source." width="100%">
-</div>
+<p align="center">
+  <img src="./assets/org-hero.png" alt="Perseus Computing systems: verified context, durable memory, and verifiable provenance." width="100%">
+</p>
 
-<br>
+<p align="center">
+  <a href="https://perseus.observer"><img src="https://img.shields.io/badge/perseus.observer-11161d?style=flat-square&logo=googlechrome&logoColor=f1ede3" alt="Perseus Computing website"></a>
+  <a href="https://github.com/Perseus-Computing-LLC/perseus"><img src="https://img.shields.io/badge/open_source-MIT-4d6b63?style=flat-square" alt="MIT licensed open source"></a>
+</p>
 
-<div align="center">
-  <a href="https://perseus.observer"><img src="https://img.shields.io/badge/website-perseus.observer-a78bfa?style=flat-square" alt="Website"></a>
-  <a href="https://github.com/Perseus-Computing-LLC/perseus/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-3fb37f?style=flat-square" alt="License"></a>
-  <a href="https://pypi.org/project/perseus-ctx/"><img src="https://img.shields.io/badge/pypi-perseus--ctx-a78bfa?style=flat-square" alt="PyPI"></a>
-</div>
+## Infrastructure for systems that need receipts
+
+Most agent software records outputs. The harder question comes later: what did it
+know, what did it do, and can anyone reconstruct the answer without trusting a
+vendor dashboard?
+
+Perseus Computing builds local-first infrastructure for that job. The products
+work independently. Together, they cover the path from working state to durable
+knowledge to a verifiable record of action.
+
+<p align="center">
+  <img src="./assets/product-family.png" alt="Three connected systems representing Perseus, Perseus Vault, and Perseus Ledger." width="100%">
+</p>
+
+| Product | Job | Start here |
+|---|---|---|
+| [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Resolves verified workspace state before an agent acts. | `pip install perseus-ctx` |
+| [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Keeps durable, encrypted, time-valid knowledge in a portable local store. | One Rust binary, one file. |
+| [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Records hash-chained events, evidence links, authority references, and optional resource allocation. | `pip install plutus-agent` during the compatibility transition. |
+
+Perseus resolves. Vault remembers. Ledger proves.
+
+## Built for inspection, not lock-in
+
+- Local-first and self-hostable. Each product can run without a hosted control plane.
+- Open source under permissive licenses. Read the code, keep the data, leave when you want.
+- Runtime-neutral. We integrate with agent frameworks and tools without making any one of them a prerequisite.
+- Evidence-oriented. A claim about a system should trace back to state, records, and artifacts someone else can inspect.
+
+## Government and regulated work
+
+The products are useful where deployment control and traceability matter. They
+are designed to be inspectable, portable, and deployable in constrained
+environments. Specific compliance claims depend on the deployment and controls
+in use.
+
+[Government procurement information →](https://perseus.observer/government/)
 
 ---
 
-## The Perseus family
-
-<div align="center">
-  <img src="./assets/product-family.png" alt="Perseus (live context engine), Perseus Vault (persistent memory), Plutus (credit & spend monitor)" width="100%">
-</div>
-
-### [Perseus](https://github.com/Perseus-Computing-LLC/perseus) — Live Context Engine
-Renders workspace state into verified facts before your AI agent's context window opens. No orientation tax. No stale docs. Just instant, inspectable context. `pip install perseus-ctx`. MIT licensed. Local-first.
-
-### [Perseus Vault](https://github.com/Perseus-Computing-LLC/perseus-vault) — Persistent Memory
-Zero-dependency, encrypted persistent memory for AI agents. SQLite + FTS5, AES-256-GCM, sub-millisecond recall in one portable file. 55 MCP tools. Single Rust binary.
-
-### [Plutus](https://github.com/Perseus-Computing-LLC/plutus) — Credit &amp; Spend Monitor
-Self-hosted usage metering and prepaid-credit billing for LLM/agent spend. Meters every call, prices it, and depletes prepaid credit — with a live spend dashboard, per-provider breakdowns, and low-balance alerts. `pip install plutus-agent`. MIT licensed.
-
----
-
-## For Government
-
-[Government procurement page →](https://perseus.observer/government/)
-
-- SBOMs published per EO 14028
-- NIST AI RMF aligned (all four functions)
-- EAR99 self-classified — no ITAR restrictions
-- Air-gap ready — zero cloud dependencies
-- MIT licensed — no vendor lock-in
+[Website](https://perseus.observer/) · [Perseus](https://github.com/Perseus-Computing-LLC/perseus) · [Vault](https://github.com/Perseus-Computing-LLC/perseus-vault) · [Ledger](https://github.com/Perseus-Computing-LLC/ledger)
