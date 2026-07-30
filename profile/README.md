@@ -1,47 +1,57 @@
 <p align="center">
-  <img src="./assets/org-hero.png" alt="Perseus Computing systems: verified context, durable memory, and verifiable provenance." width="100%">
+  <img src="./assets/org-hero.png" alt="Perseus Computing" width="100%">
 </p>
 
 <p align="center">
-  <a href="https://perseus.observer"><img src="https://img.shields.io/badge/perseus.observer-11161d?style=flat-square&logo=googlechrome&logoColor=f1ede3" alt="Perseus Computing website"></a>
-  <a href="https://github.com/Perseus-Computing-LLC/perseus"><img src="https://img.shields.io/badge/open_source-MIT-4d6b63?style=flat-square" alt="MIT licensed open source"></a>
+  <strong>Open-source infrastructure for trustworthy autonomous systems.</strong><br>
+  Verified context. Durable memory. Verifiable evidence.
 </p>
-
-## Infrastructure for systems that need receipts
-
-Most agent software records outputs. The harder question comes later: what did it
-know, what did it do, and can anyone reconstruct the answer without trusting a
-vendor dashboard?
-
-Perseus Computing builds local-first infrastructure for that job. The products
-work independently. Together, they cover the path from working state to durable
-knowledge to a verifiable record of action.
 
 <p align="center">
-  <img src="./assets/product-family.png" alt="Three connected systems representing Perseus, Perseus Vault, and Perseus Ledger." width="100%">
+  <a href="https://perseus.observer">Website</a> ·
+  <a href="https://github.com/Perseus-Computing-LLC/perseus">Perseus</a> ·
+  <a href="https://github.com/Perseus-Computing-LLC/perseus-vault">Vault</a> ·
+  <a href="https://github.com/Perseus-Computing-LLC/ledger">Ledger</a>
 </p>
 
-| Product | Job | Start here |
+## What we build
+
+Most agent systems can produce an answer. The difficult part is being able to
+inspect it later: what state did the system see, what knowledge did it retain,
+and what record proves the action occurred?
+
+Perseus Computing builds three local-first products for those jobs. Use one on
+its own or connect them through documented contracts. No hosted control plane or
+specific agent framework is required.
+
+<p align="center">
+  <img src="./assets/product-family.svg" alt="Perseus resolves verified context. Perseus Vault stores durable memory. Perseus Ledger records verifiable evidence." width="100%">
+</p>
+
+| Product | Plain-English job | Start here |
 |---|---|---|
-| [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Resolves verified workspace state before an agent acts. | `pip install perseus-ctx` |
-| [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Keeps durable, encrypted, time-valid knowledge in a portable local store. | One Rust binary, one file. |
-| [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Records hash-chained events, evidence links, authority references, and optional resource allocation. | `pip install plutus-agent` during the compatibility transition. |
+| [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Gives an agent the verified facts about the current workspace before it starts work. | `pip install perseus-ctx` |
+| [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Keeps durable, encrypted memory so agents can retrieve past decisions and knowledge. | One Rust binary, one local file. |
+| [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Keeps a hash-chained record of events, evidence, approvals, and optional cost allocation. | `pip install plutus-agent` during the compatibility transition. |
 
-Perseus resolves. Vault remembers. Ledger proves.
+### The short version
 
-## Built for inspection, not lock-in
+- **Perseus** answers: *What does the system need to know right now?*
+- **Vault** answers: *What did it learn or decide before?*
+- **Ledger** answers: *What happened, and can we verify it?*
 
-- Local-first and self-hostable. Each product can run without a hosted control plane.
-- Open source under permissive licenses. Read the code, keep the data, leave when you want.
-- Runtime-neutral. We integrate with agent frameworks and tools without making any one of them a prerequisite.
-- Evidence-oriented. A claim about a system should trace back to state, records, and artifacts someone else can inspect.
+## Why local-first
 
-## Government and regulated work
+Your working state, memory, and evidence trail should remain under your control.
+The core products run locally or self-hosted, use open formats, and can be
+inspected without trusting a vendor dashboard. External runtimes are optional
+integrations, not dependencies.
 
-The products are useful where deployment control and traceability matter. They
-are designed to be inspectable, portable, and deployable in constrained
-environments. Specific compliance claims depend on the deployment and controls
-in use.
+## Government and constrained environments
+
+The products are designed for environments where deployment control and
+traceability matter. Specific compliance claims depend on the deployment and
+controls in use.
 
 [Government procurement information →](https://perseus.observer/government/)
 
