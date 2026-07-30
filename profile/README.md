@@ -32,7 +32,7 @@ specific agent framework is required.
 |---|---|---|
 | [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Gives an agent the verified facts about the current workspace before it starts work. | `pip install perseus-ctx` |
 | [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Keeps durable, encrypted memory so agents can retrieve past decisions and knowledge. | One Rust binary, one local file. |
-| [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Keeps a hash-chained record of events, evidence, approvals, and optional cost allocation. | `pip install plutus-agent` during the compatibility transition. |
+| [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Keeps a hash-chained record of events, evidence, approvals, and optional cost allocation. | [Perseus Ledger →](https://perseus.observer/ledger/) · legacy `plutus` identifiers remain compatibility contracts. |
 
 ### The short version
 
