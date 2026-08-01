@@ -1,10 +1,12 @@
 <p align="center">
-  <img src="./assets/org-hero.png" alt="Perseus Computing" width="100%">
+  <img src="./assets/perseus-mark.svg" alt="Perseus Computing mark" width="96">
 </p>
 
+<h1 align="center">Perseus Computing</h1>
+
 <p align="center">
-  <strong>Open-source infrastructure for trustworthy autonomous systems.</strong><br>
-  Verified context. Durable memory. Verifiable evidence.
+  <strong>Context for the present. Memory for the past. Evidence for what happened.</strong><br>
+  Open-source, local-first infrastructure for AI agents.
 </p>
 
 <p align="center">
@@ -14,47 +16,85 @@
   <a href="https://github.com/Perseus-Computing-LLC/ledger">Ledger</a>
 </p>
 
-## What we build
+## The system around the model
 
-Most agent systems can produce an answer. The difficult part is being able to
-inspect it later: what state did the system see, what knowledge did it retain,
-and what record proves the action occurred?
+An agent can produce an answer and still leave important questions unanswered:
+what state did it see, what did it remember, and what record shows what happened?
 
-Perseus Computing builds three local-first products for those jobs. Use one on
-its own or connect them through documented contracts. No hosted control plane or
-specific agent framework is required.
+Perseus Computing builds the local-first infrastructure around the model. The
+products run independently or together, use documented interfaces, and do not
+require a hosted control plane or a particular agent framework.
 
 <p align="center">
-  <img src="./assets/product-family.svg" alt="Perseus resolves verified context. Perseus Vault stores durable memory. Perseus Ledger records verifiable evidence." width="100%">
+  <img src="./assets/product-family.svg" alt="The Perseus system: verified context, durable memory, and verifiable evidence." width="100%">
 </p>
 
-| Product | Plain-English job | Start here |
-|---|---|---|
-| [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Gives an agent the verified facts about the current workspace before it starts work. | `pip install perseus-ctx` |
-| [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Keeps durable, encrypted memory so agents can retrieve past decisions and knowledge. | One Rust binary, one local file. |
-| [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Keeps a hash-chained record of events, evidence, approvals, and optional cost allocation. | [Perseus Ledger →](https://perseus.observer/ledger/) · legacy `plutus` identifiers remain compatibility contracts. |
+## Three layers, one inspectable path
 
-### The short version
+| Layer | Product | What it does | Start here |
+| --- | --- | --- | --- |
+| **Present** | [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Resolves the verified workspace facts an agent needs before a session starts. | `pip install perseus-ctx` |
+| **Memory** | [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Stores durable, encrypted, time-aware memory in a portable local database. | [Install Vault →](https://perseus.observer/vault/#install) |
+| **Evidence** | [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Records events, evidence, approvals, and other consequential actions in a hash-chained trail. | [Explore Ledger →](https://perseus.observer/ledger/) |
 
-- **Perseus** answers: *What does the system need to know right now?*
-- **Vault** answers: *What did it learn or decide before?*
-- **Ledger** answers: *What happened, and can we verify it?*
+In one sentence:
+
+- **Perseus** answers: _What does the system need to know right now?_
+- **Vault** answers: _What did it learn or decide before?_
+- **Ledger** answers: _What happened, and can we verify it?_
+
+Existing integrations may still use `plutus` identifiers; those remain
+compatibility contracts where documented.
+
+## Start locally
+
+Install the context engine in a project and render its first workspace briefing:
+
+```bash
+pip install perseus-ctx
+cd your-project
+perseus quickstart
+```
+
+Then add the layers you need:
+
+- [Perseus quickstart](https://github.com/Perseus-Computing-LLC/perseus/blob/main/docs/quickstart.md)
+- [Perseus Vault](https://github.com/Perseus-Computing-LLC/perseus-vault)
+- [Perseus Ledger](https://github.com/Perseus-Computing-LLC/ledger)
+- [Integrations](https://perseus.observer/integrations/)
 
 ## Why local-first
 
-Your working state, memory, and evidence trail should remain under your control.
-The core products run locally or self-hosted, use open formats, and can be
-inspected without trusting a vendor dashboard. External runtimes are optional
-integrations, not dependencies.
+Your project context, memory, and evidence trail should stay under your control.
+The core products run locally or self-hosted, use inspectable formats, and keep
+external runtimes optional rather than making them dependencies.
 
-## Government and constrained environments
+- No required hosted control plane
+- No required cloud account for the local path
+- Works with MCP-compatible assistants and agent frameworks
+- MIT-licensed core projects
 
-The products are designed for environments where deployment control and
-traceability matter. Specific compliance claims depend on the deployment and
-controls in use.
+## For constrained environments
 
-[Government procurement information →](https://perseus.observer/government/)
+The products are built for deployments where boundary control and traceability
+matter. Actual security and compliance properties depend on how a deployment is
+configured and operated.
+
+[Government and constrained-environment information →](https://perseus.observer/government/)
+
+## Explore the work
+
+- [Perseus methods and benchmarks](https://perseus.observer/benchmarks/)
+- [Perseus integrations](https://perseus.observer/integrations/)
+- [Perseus Computing website](https://perseus.observer/)
+- [GitHub Sponsors](https://github.com/sponsors/tcconnally)
 
 ---
 
-[Website](https://perseus.observer/) · [Perseus](https://github.com/Perseus-Computing-LLC/perseus) · [Vault](https://github.com/Perseus-Computing-LLC/perseus-vault) · [Ledger](https://github.com/Perseus-Computing-LLC/ledger)
+<p align="center">
+  <a href="https://perseus.observer">perseus.observer</a> ·
+  <a href="https://github.com/Perseus-Computing-LLC">GitHub organization</a> ·
+  <a href="https://github.com/Perseus-Computing-LLC/.github/issues">Questions and discussions</a>
+</p>
+
+<p align="center"><sub>Open-source infrastructure for agents that need context, continuity, and proof.</sub></p>
