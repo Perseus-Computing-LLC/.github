@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/perseus-mark.svg" alt="Perseus Computing mark" width="96">
+  <img src="./assets/perseus-mark.png" alt="Perseus Computing mark" width="96">
 </p>
 
 <h1 align="center">Perseus Computing</h1>
