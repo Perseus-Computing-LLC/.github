@@ -33,7 +33,7 @@ require a hosted control plane or a particular agent framework.
 
 | Layer | Product | What it does | Start here |
 | --- | --- | --- | --- |
-| **Present** | [**Perseus**](https://github.com/Perseus-Computing-LLC/perseus) | Resolves the verified workspace facts an agent needs before a session starts. | `pip install perseus-ctx` |
+| **Present** | [**Perseus Context Engine**](https://github.com/Perseus-Computing-LLC/perseus) | Resolves the verified workspace facts an agent needs before a session starts. | `pip install perseus-ctx` |
 | **Memory** | [**Perseus Vault**](https://github.com/Perseus-Computing-LLC/perseus-vault) | Stores durable, encrypted, time-aware memory in a portable local database. | [Install Vault →](https://perseus.observer/vault/#install) |
 | **Evidence** | [**Perseus Ledger**](https://github.com/Perseus-Computing-LLC/ledger) | Records events, evidence, approvals, and other consequential actions in a hash-chained trail. | [Explore Ledger →](https://perseus.observer/ledger/) |
 
@@ -60,6 +60,7 @@ Then add the layers you need:
 
 - [Perseus quickstart](https://github.com/Perseus-Computing-LLC/perseus/blob/main/docs/quickstart.md)
 - [Perseus Vault](https://github.com/Perseus-Computing-LLC/perseus-vault)
+- [Vault MCP API reference](https://perseus.observer/vault/mcp-reference/)
 - [Perseus Ledger](https://github.com/Perseus-Computing-LLC/ledger)
 - [Integrations](https://perseus.observer/integrations/)
 
