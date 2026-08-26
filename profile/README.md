@@ -43,8 +43,7 @@ In one sentence:
 - **Vault** answers: _What did it learn or decide before?_
 - **Ledger** answers: _What happened, and can we verify it?_
 
-Existing integrations may still use `plutus` identifiers; those remain
-compatibility contracts where documented.
+Current integrations should use the Ledger identifiers documented in the repository.
 
 ## Start locally
 
