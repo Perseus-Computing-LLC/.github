@@ -40,8 +40,8 @@ We build three small, fast, focused Rust crates to address each failure mode dir
   priority eviction            with atomic leases           SHA-256 hash chains
        |                               |                              |
        v                               v                              v
- Deterministic prompt           ChaCha20-Poly1305            Verifiable event log
- allocation frame               memory envelope              with tamper detection
+       Deterministic prompt           AES-256-GCM                   Verifiable event log
+       allocation frame               memory envelope               with tamper detection
 ```
 
 | Crate | Purpose | Crates.io | Documentation |
@@ -138,7 +138,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "agent_target_42",
         "Target waypoint confirmed: sector 7.",
     );
-    vault.put(entity)?;
+    vault.put(&entity)?;
 
     // Release the lease when done
     coordinator.release_lease(&lease.token)?;
@@ -194,14 +194,15 @@ Measured on Linux x86_64 (`rustc 1.85.0`, `opt-level = 3`, `lto = "fat"`):
 
 | Component | Test scenario | Metric | Result | Behavior |
 | :--- | :--- | :--- | :--- | :--- |
-| **Harpe** | 128k token context limit | Median pruning latency | **1.72 &micro;s** | Drops lowest priority items first |
-| **Harpe** | High contention allocation | 95th percentile latency | **4.88 &micro;s** | Stays under 5 microseconds |
-| **Harpe** | Multi-turn compression | Context ceiling reduction | **69.50%** | Prevents context runaway |
-| **Kibisis** | Concurrent read and write leases | Throughput | **1,745,000+ ops/s** | Zero race conditions under contention |
-| **Kibisis** | 10-node network partition test | Split-brain count | **0 errors** | Reconnects cleanly after packet loss |
-| **Argus** | Event append into hash chain | Append latency | **4.12 &micro;s** | Continuous SHA-256 hash linking |
-| **Argus** | Single-bit corruption test | Detection latency | **46.00 &micro;s** | Aborts immediately on broken chain |
-| **LongMemEval-S** | Cleaned CoT needle-in-haystack (500 instances) | Recall@10 | **98.20%** | 0.9111 MRR across 23,854 historical sessions |
+| **Harpe** | Small context budgeting (10 items / 2k context) | Median latency | **1.51 &micro;s** | Fast path deterministic knapsack |
+| **Harpe** | Large context budgeting (200 items / 40k context) | Median latency | **31.89 &micro;s** | Drops lowest priority items first |
+| **Harpe** | Multi-turn compression | Context ceiling reduction | **69.51%** | Prevents context runaway |
+| **Kibisis** | Sequential envelope commits | Ingestion throughput | **2,100,000+ writes/s** | Direct memory vault ingestion |
+| **Kibisis** | Concurrent read and write leases (8 threads) | Lease throughput | **1,560,000+ ops/s** | Zero race conditions under contention |
+| **Kibisis** | 10-node network partition test | Split-brain count | **0 errors** | Reconnects cleanly after 50% packet drop |
+| **Argus** | Event append into hash chain | Append throughput | **~600,000 events/s** | Continuous SHA-256 hash linking (~1.67 &micro;s/op) |
+| **Argus** | Full-chain verification traversal | Verification throughput | **~839,000 events/s** | Validates 10,000 events in ~11.9 ms |
+| **Argus** | Single-bit corruption test | Detection latency | **46.50 &micro;s** | Aborts immediately on broken chain (block #42) |
 
 Run the benchmarks on your own machine:
 
@@ -215,7 +216,7 @@ cargo run --release -p perseus-benchmarks
 
 - **Local first:** Runs fully on your hardware. No telemetry, no accounts, and no network calls.
 - **Inspectable:** Uses SQLite and SHA-256 hash chains so you can inspect state directly with standard tools.
-- **MIT Licensed:** Free for commercial, government, and proprietary use without copyleft restrictions or cloud fees.
+- **MIT License:** Free for commercial, government, and proprietary use without copyleft restrictions or cloud fees.
 - **Composable:** Each crate is standalone. Use Harpe alone for prompt sizing, Kibisis for memory, or Argus for audit logs.
 
 ---
