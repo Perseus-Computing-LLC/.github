@@ -5,8 +5,8 @@
 <h1 align="center">Perseus Computing</h1>
 
 <p align="center">
-  <strong>Deterministic context synthesis. Local encrypted memory. Tamper-evident audit provenance.</strong><br>
-  Open-source, local-first cognitive infrastructure for autonomous AI agents.
+  <strong>Deterministic context synthesis. Local encrypted memory. Tamper-evident audit logs.</strong><br>
+  Open source, local-first Rust crates for autonomous agents and mission systems.
 </p>
 
 <p align="center">
@@ -19,45 +19,50 @@
 
 ---
 
-## Clean-Room Architecture
+## What we build
 
-Autonomous AI agents require verifiable state, durable memory, and tamper-evident auditability. Perseus Computing provides local-first primitives engineered in pure Rust to form the foundation of verifiable agent cognition.
+Autonomous agents break down in production when three things go wrong:
+1. Context windows fill up, causing models to drop instructions or hallucinate randomly.
+2. Concurrent agent workers overwrite shared memory without locking, creating race conditions.
+3. Actions and tool executions run without an unforgeable record, making debugging and auditing impossible.
 
-All primitives are designed clean-room, released under the permissive **MIT License**, and published as independent, composable crates on [crates.io](https://crates.io).
+We build three small, fast, focused Rust crates to address each failure mode directly:
 
 ```
  +-------------------------------------------------------------------------+
- |                      AUTONOMOUS AGENT RUNTIME                            |
+ |                          AGENT EXECUTION RUNTIME                        |
  +-------------------------------------------------------------------------+
        |                               |                              |
        v                               v                              v
  [ STAGE 01: CONTEXT ]        [ STAGE 02: MEMORY ]          [ STAGE 03: AUDIT ]
        harpe                        kibisis                     argus-ledger
-  Token Budgeting &            Encrypted Vault &             Append-Only Ledger &
-  Priority Scheduling          SWMR Concurrency Leases       SHA-256 Provenance
+  Token budgeting and          Local encrypted vault        Append-only ledger and
+  priority eviction            with atomic leases           SHA-256 hash chains
        |                               |                              |
        v                               v                              v
- Deterministic Prompt           ChaCha20-Poly1305             Cryptographic Merkle
- Allocation Frame               Memory Envelope               Audit Receipt
+ Deterministic prompt           ChaCha20-Poly1305            Verifiable event log
+ allocation frame               memory envelope              with tamper detection
 ```
 
-| Layer | Primitive | Role | Crates.io | Documentation |
-| :--- | :--- | :--- | :--- | :--- |
-| **Context** | **Harpe** | Deterministic context budgeting, priority scheduling, and dynamic synthesis. | [![Crates.io](https://img.shields.io/crates/v/harpe.svg)](https://crates.io/crates/harpe) | [![docs.rs](https://docs.rs/harpe/badge.svg)](https://docs.rs/harpe) |
-| **Memory** | **Kibisis** | Encrypted cognitive memory vault with versioning and atomic concurrency leases. | [![Crates.io](https://img.shields.io/crates/v/kibisis.svg)](https://crates.io/crates/kibisis) | [![docs.rs](https://docs.rs/kibisis/badge.svg)](https://docs.rs/kibisis) |
-| **Evidence** | **Argus** | Cryptographic audit ledger with tamper-evident SHA-256 hash chaining. | [![Crates.io](https://img.shields.io/crates/v/argus-ledger.svg)](https://crates.io/crates/argus-ledger) | [![docs.rs](https://docs.rs/argus-ledger/badge.svg)](https://docs.rs/argus-ledger) |
+| Crate | Purpose | Crates.io | Documentation |
+| :--- | :--- | :--- | :--- |
+| **Harpe** | Token budgeting, priority scheduling, and deterministic prompt sizing | [![Crates.io](https://img.shields.io/crates/v/harpe.svg)](https://crates.io/crates/harpe) | [![docs.rs](https://docs.rs/harpe/badge.svg)](https://docs.rs/harpe) |
+| **Kibisis** | Encrypted local memory vault with atomic leases for concurrent workers | [![Crates.io](https://img.shields.io/crates/v/kibisis.svg)](https://crates.io/crates/kibisis) | [![docs.rs](https://docs.rs/kibisis/badge.svg)](https://docs.rs/kibisis) |
+| **Argus** | Append-only audit ledger with SHA-256 continuous hash chaining | [![Crates.io](https://img.shields.io/crates/v/argus-ledger.svg)](https://crates.io/crates/argus-ledger) | [![docs.rs](https://docs.rs/argus-ledger/badge.svg)](https://docs.rs/argus-ledger) |
+
+All three crates are open source under the MIT License and run entirely on your own hardware without calling home.
 
 ---
 
-## Workspace Installation
+## Quick start
 
-Add the complete cognitive stack to your Cargo workspace:
+Add the crates to your Cargo project:
 
 ```bash
 cargo add harpe kibisis argus-ledger
 ```
 
-Or declare individual primitives in `Cargo.toml`:
+Or add them to `Cargo.toml`:
 
 ```toml
 [dependencies]
@@ -68,10 +73,10 @@ argus-ledger = "0.1.0-alpha.1"
 
 ---
 
-## Core Primitives & Code Interfaces
+## How to use them
 
-### 1. Harpe: Context Window Budgeting & Synthesis
-Manage strict context windows deterministically without loss of high-priority directives:
+### 1. Harpe: Enforce token budgets before calling models
+Set a hard token ceiling and priority rules so high-priority instructions are never dropped when context grows:
 
 ```rust
 use harpe::{ContextBudgetEngine, ContextItem, PrunePolicy, TokenBudget};
@@ -89,14 +94,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let items = vec![
         ContextItem {
             id: "system_prompt".to_string(),
-            content: "You are a mission-critical verification agent.".to_string(),
+            content: "You are a verification agent. Follow all checks.".to_string(),
             token_count: 120,
             priority: 100,
             compressible: false,
         },
         ContextItem {
             id: "retrieved_doc".to_string(),
-            content: "Historical telemetry log payload data...".to_string(),
+            content: "Long telemetry log payload from node 3...".to_string(),
             token_count: 3200,
             priority: 10,
             compressible: true,
@@ -113,8 +118,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### 2. Kibisis: Local Encrypted Memory Vault
-Maintain persistent, searchable cognitive memory with atomic multi-agent leases:
+### 2. Kibisis: Coordinate agent memory with atomic leases
+Prevent multiple workers from clobbering the same memory key:
 
 ```rust
 use kibisis::{InMemoryLeaseCoordinator, InMemoryMemoryVault, LeaseCoordinator, MemoryEntity, MemoryVault};
@@ -124,10 +129,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let vault = InMemoryMemoryVault::new();
     let coordinator = InMemoryLeaseCoordinator::new();
 
-    // Acquire atomic write lease for key
+    // Grab a short write lease so other workers wait
     let lease = coordinator.acquire_write_lease("agent_target_42", Duration::from_millis(100))?;
 
-    // Store encrypted memory entity
+    // Write the memory entry
     let entity = MemoryEntity::new(
         "subgoal",
         "agent_target_42",
@@ -135,21 +140,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
     vault.put(entity)?;
 
-    // Release lease
+    // Release the lease when done
     coordinator.release_lease(&lease.token)?;
 
-    // Retrieve and search
+    // Search existing memories
     let results = vault.search("waypoint")?;
     for res in results {
-        println!("Found memory entity: {} (score: {})", res.entity.key, res.score);
+        println!("Found memory: {} (score: {})", res.entity.key, res.score);
     }
 
     Ok(())
 }
 ```
 
-### 3. Argus: Cryptographic Provenance Ledger
-Record all agent actions, tool calls, and model decisions into an immutable SHA-256 audit chain:
+### 3. Argus: Record an audit trail that cannot be forged
+Log every decision and tool run into a hash chain where any change breaks verification:
 
 ```rust
 use argus_ledger::{AuditLedgerReader, AuditLedgerWriter, AuditVerifier, InMemoryLedger};
@@ -157,25 +162,25 @@ use argus_ledger::{AuditLedgerReader, AuditLedgerWriter, AuditVerifier, InMemory
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut ledger = InMemoryLedger::new();
 
-    // Append verified execution events
+    // Append events as they happen
     let ev1 = ledger.append(
-        "SYSTEM_INITIALIZATION",
-        "agent:perseus-core",
+        "SYSTEM_INIT",
+        "agent:worker_0",
         r#"{"status":"bootstrapped"}"#,
     )?;
     println!("Sequence #{}: Hash {}", ev1.sequence, &ev1.event_hash[0..16]);
 
     let ev2 = ledger.append(
         "TOOL_EXECUTION",
-        "agent:perseus-core",
+        "agent:worker_0",
         r#"{"tool":"compiler","exit_code":0}"#,
     )?;
     println!("Sequence #{}: Hash {}", ev2.sequence, &ev2.event_hash[0..16]);
 
-    // Verify tamper-evident cryptographic continuity
+    // Check the chain for tampering
     let report = ledger.verify_chain()?;
-    assert!(report.valid, "Tamper detected in sequence chain");
-    println!("Chain validated: {} events verified intact.", report.total_events);
+    assert!(report.valid, "Tampering detected in sequence chain");
+    println!("Chain intact: verified {} events.", report.total_events);
 
     Ok(())
 }
@@ -183,21 +188,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ---
 
-## Empirical Benchmarks & Telemetry
+## Measured benchmarks
 
-Evaluated on bare-metal Linux x86_64 (`rustc 1.85.0`, `opt-level = 3`, `lto = "fat"`):
+Measured on Linux x86_64 (`rustc 1.85.0`, `opt-level = 3`, `lto = "fat"`):
 
-| Subsystem | Evaluation Condition | Metric | Measurement | Verification Invariant |
+| Component | Test scenario | Metric | Result | Behavior |
 | :--- | :--- | :--- | :--- | :--- |
-| **Harpe** | 128k Token Context Limit | p50 Pruning Latency | **1.72 &micro;s** | Deterministic priority eviction |
-| **Harpe** | High Contention Allocation | p95 Pruning Latency | **4.88 &micro;s** | Strictly bounded sub-5&micro;s curve |
-| **Harpe** | Multi-Turn Dynamic Compression | Ceiling Reduction | **69.50%** | Context runaway prevention |
-| **Kibisis** | Concurrent Read/Write Leases | Throughput | **1,745,000+ ops/s** | Zero race conditions under contention |
-| **Kibisis** | 10-Node Swarm Network Partition | Split-Brain Count | **0 Errors** | Immediate convergence under packet loss |
-| **Argus** | Event Append into Merkle DAG | Append Latency | **4.12 &micro;s** | Continuous SHA-256 hash chain |
-| **Argus** | Single-Bit Tamper Inspection | Detection Latency | **46.00 &micro;s** | Immediate fail-closed state abort |
+| **Harpe** | 128k token context limit | Median pruning latency | **1.72 &micro;s** | Drops lowest priority items first |
+| **Harpe** | High contention allocation | 95th percentile latency | **4.88 &micro;s** | Stays under 5 microseconds |
+| **Harpe** | Multi-turn compression | Context ceiling reduction | **69.50%** | Prevents context runaway |
+| **Kibisis** | Concurrent read and write leases | Throughput | **1,745,000+ ops/s** | Zero race conditions under contention |
+| **Kibisis** | 10-node network partition test | Split-brain count | **0 errors** | Reconnects cleanly after packet loss |
+| **Argus** | Event append into hash chain | Append latency | **4.12 &micro;s** | Continuous SHA-256 hash linking |
+| **Argus** | Single-bit corruption test | Detection latency | **46.00 &micro;s** | Aborts immediately on broken chain |
 
-Reproduce locally across the workspace:
+Run the benchmarks on your own machine:
 
 ```bash
 cargo run --release -p perseus-benchmarks
@@ -205,21 +210,21 @@ cargo run --release -p perseus-benchmarks
 
 ---
 
-## Operating Principles
+## How we work
 
-- **Local-First & Sovereign:** Operates completely offline without external cloud dependencies or remote telemetry.
-- **Inspectable & Tamper-Evident:** SQLite-backed storage and SHA-256 hash chains guarantee mathematical auditability.
-- **Clean-Room Verification:** Ground-up pure Rust implementation with zero legacy lineage, licensed under MIT.
-- **Framework Agnostic:** Composable across standalone daemons, custom agent runners, or embedded enclaves.
+- **Local first:** Runs fully on your hardware. No telemetry, no accounts, and no network calls.
+- **Inspectable:** Uses SQLite and SHA-256 hash chains so you can inspect state directly with standard tools.
+- **Permissive:** MIT licensed. You can embed these crates in commercial software or private infrastructure without friction.
+- **Composable:** Each crate is standalone. Use Harpe alone for prompt sizing, Kibisis for memory, or Argus for audit logs.
 
 ---
 
 ## Repositories
 
-- [harpe](https://github.com/Perseus-Computing-LLC/harpe): Deterministic context synthesis and token budgeting.
-- [kibisis](https://github.com/Perseus-Computing-LLC/kibisis): Local-first encrypted cognitive memory vault with atomic leases.
-- [argus](https://github.com/Perseus-Computing-LLC/argus): Tamper-evident append-only SHA-256 provenance and audit ledger.
-- [perseus-benchmarks](https://github.com/Perseus-Computing-LLC/perseus-benchmarks): Microsecond performance and partition stress tests.
+- [harpe](https://github.com/Perseus-Computing-LLC/harpe): Context budgeting and priority eviction.
+- [kibisis](https://github.com/Perseus-Computing-LLC/kibisis): Local encrypted memory vault with atomic leases.
+- [argus](https://github.com/Perseus-Computing-LLC/argus): Append-only audit ledger with SHA-256 hash verification.
+- [perseus-benchmarks](https://github.com/Perseus-Computing-LLC/perseus-benchmarks): Benchmarks and stress tests.
 
 ---
 
@@ -228,4 +233,4 @@ cargo run --release -p perseus-benchmarks
   <a href="mailto:contact@perseuscomputing.com">contact@perseuscomputing.com</a> &middot;
   <a href="mailto:security@perseuscomputing.com">security@perseuscomputing.com</a>
 </p>
-<p align="center"><sub>Clean-room cognitive infrastructure for verifiable AI agents. &copy; 2026 Perseus Computing LLC. MIT License.</sub></p>
+<p align="center"><sub>Copyright &copy; 2026 Perseus Computing LLC. Released under the MIT License.</sub></p>
