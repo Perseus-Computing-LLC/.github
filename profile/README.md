@@ -66,9 +66,9 @@ Or add them to `Cargo.toml`:
 
 ```toml
 [dependencies]
-harpe = "0.1.0-alpha.1"
-kibisis = "0.1.0-alpha.1"
-argus-ledger = "0.1.0-alpha.1"
+harpe = "0.1.0-alpha.2"
+kibisis = "0.1.0-alpha.2"
+argus-ledger = "0.1.0-alpha.2"
 ```
 
 ---
