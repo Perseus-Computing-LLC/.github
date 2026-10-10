@@ -26,15 +26,15 @@ All metrics below are reproducible via `cargo run --release -p telamon-benchmark
 
 | System | Metric | Target / Claim | Verification Command | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Harpe** | Small Context (10 items / 2k context) | p50: ~1.51 µs | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Harpe** | Large Context (200 items / 40k context) | p50: ~31.89 µs | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Harpe** | Multi-Turn Pruning Ceiling Reduction | ~69.51% reduction | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Kibisis** | Sequential In-Memory Write Ingestion | >2,100,000 writes/s | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Kibisis** | Multi-Agent SWMR Lease Concurrency | >1,560,000 ops/s (8 threads) | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Argus** | SHA-256 Continuous Hash Chaining | ~600,000 events/s (~1.67 µs) | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Argus** | Full Chain Verification Traversal | ~839,000 events/s (~1.19 µs) | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Argus** | Tamper Fail-Closed Detection (Block #42) | 46.50 µs | `cargo run --release -p perseus-benchmarks` | **VERIFIED** |
-| **Swarm** | Network Partition Tolerance (50% drop) | 100% convergence, 0 split-brain | `cargo run --release -p perseus-benchmarks --bin swarm_partition` | **VERIFIED** |
+| **Harpe** | Small Context (10 items / 2k context) | p50: ~1.51 µs | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Harpe** | Large Context (200 items / 40k context) | p50: ~31.89 µs | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Harpe** | Multi-Turn Pruning Ceiling Reduction | ~69.51% reduction | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Kibisis** | Sequential In-Memory Write Ingestion | >2,100,000 writes/s | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Kibisis** | Multi-Agent SWMR Lease Concurrency | >1,560,000 ops/s (8 threads) | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Argus** | SHA-256 Continuous Hash Chaining | ~600,000 events/s (~1.67 µs) | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Argus** | Full Chain Verification Traversal | ~839,000 events/s (~1.19 µs) | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Argus** | Tamper Fail-Closed Detection (Block #42) | 46.50 µs | `cargo run --release -p telamon-benchmarks` | **VERIFIED** |
+| **Swarm** | Network Partition Tolerance (50% drop) | 100% convergence, 0 split-brain | `cargo run --release -p telamon-benchmarks --bin swarm_partition` | **VERIFIED** |
 
 ---
 
