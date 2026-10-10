@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560" role="img" aria-labelledby="title desc">
-  <title id="title">Perseus Computing product system</title>
-  <desc id="desc">Perseus resolves verified context, Perseus Vault keeps durable memory, and Perseus Ledger records verifiable evidence.</desc>
+  <title id="title">Telamon Cognitive Infrastructure system</title>
+  <desc id="desc">Harpe resolves verified context, Kibisis keeps durable memory, and Argus records verifiable evidence.</desc>
   <rect width="1600" height="560" fill="#101316"/>
   <path d="M0 82H1600M0 478H1600" stroke="#30363d" stroke-width="1"/>
   <path d="M76 0V560M1524 0V560" stroke="#30363d" stroke-width="1"/>
-  <text x="76" y="74" fill="#e9e3d8" font-family="Georgia, serif" font-size="28" letter-spacing="1">THE PERSEUS SYSTEM</text>
+  <text x="76" y="74" fill="#e9e3d8" font-family="Georgia, serif" font-size="28" letter-spacing="1">THE TELAMON SYSTEM</text>
   <text x="76" y="108" fill="#9ba3aa" font-family="Arial, sans-serif" font-size="18">Three independent tools. One inspectable path from state to knowledge to evidence.</text>
 
   <path d="M324 302H590M1010 302H1276" stroke="#d5a544" stroke-width="3" stroke-linecap="round"/>
@@ -17,7 +17,7 @@
     <circle cx="123" cy="144" r="14" fill="#d5a544"/>
     <circle cx="123" cy="144" r="5" fill="#151b22"/>
     <text x="28" y="42" fill="#d5a544" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">01 / CONTEXT</text>
-    <text x="28" y="226" fill="#f2eee7" font-family="Georgia, serif" font-size="27">Perseus</text>
+    <text x="28" y="226" fill="#f2eee7" font-family="Georgia, serif" font-size="27">Harpe</text>
   </g>
   <text x="76" y="462" fill="#b8c0c7" font-family="Arial, sans-serif" font-size="17">Resolve the verified workspace state</text>
   <text x="76" y="488" fill="#b8c0c7" font-family="Arial, sans-serif" font-size="17">an agent needs before it acts.</text>
@@ -29,7 +29,7 @@
     <rect x="83" y="155" width="254" height="36" rx="3" fill="#1c2f27" stroke="#6ca88b"/>
     <circle cx="112" cy="85" r="6" fill="#d5a544"/><circle cx="112" cy="129" r="6" fill="#d5a544"/><circle cx="112" cy="173" r="6" fill="#d5a544"/>
     <text x="28" y="42" fill="#6ca88b" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">02 / MEMORY</text>
-    <text x="28" y="226" fill="#f2eee7" font-family="Georgia, serif" font-size="27">Perseus Vault</text>
+    <text x="28" y="226" fill="#f2eee7" font-family="Georgia, serif" font-size="27">Kibisis</text>
   </g>
   <text x="590" y="462" fill="#b8c0c7" font-family="Arial, sans-serif" font-size="17">Keep encrypted, durable, time-valid</text>
   <text x="590" y="488" fill="#b8c0c7" font-family="Arial, sans-serif" font-size="17">knowledge in a portable local store.</text>
@@ -40,7 +40,7 @@
     <path d="M72 107H176M72 133H176M72 159H142" stroke="#e8d7a5" stroke-width="2" stroke-linecap="round"/>
     <circle cx="177" cy="177" r="16" fill="#d5a544"/><path d="M170 177l5 5 10-12" fill="none" stroke="#1d1912" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="28" y="42" fill="#d5a544" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2">03 / EVIDENCE</text>
-    <text x="28" y="226" fill="#f2eee7" font-family="Georgia, serif" font-size="27">Perseus Ledger</text>
+    <text x="28" y="226" fill="#f2eee7" font-family="Georgia, serif" font-size="27">Argus</text>
   </g>
   <text x="1276" y="462" fill="#b8c0c7" font-family="Arial, sans-serif" font-size="17">Record what happened with</text>
   <text x="1276" y="488" fill="#b8c0c7" font-family="Arial, sans-serif" font-size="17">hash-chained, verifiable evidence.</text>
