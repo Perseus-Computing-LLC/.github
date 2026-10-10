@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Deterministic context synthesis. Local encrypted memory. Tamper-evident audit logs.</strong><br>
-  Open source, local-first Rust crates for autonomous agents and mission systems.
+  Telamon Cognitive Infrastructure (TCI): Open source, local-first Rust crates for autonomous agents and mission systems by Perseus Computing LLC.
 </p>
 
 <p align="center">
@@ -207,7 +207,7 @@ Measured on Linux x86_64 (`rustc 1.85.0`, `opt-level = 3`, `lto = "fat"`):
 Run the benchmarks on your own machine:
 
 ```bash
-cargo run --release -p perseus-benchmarks
+cargo run --release -p telamon-benchmarks
 ```
 
 ---
@@ -239,7 +239,7 @@ Perseus Computing maintains active compliance records and government self-assess
 - [harpe](https://github.com/Perseus-Computing-LLC/harpe): Context budgeting and priority eviction.
 - [kibisis](https://github.com/Perseus-Computing-LLC/kibisis): Local encrypted memory vault with atomic leases.
 - [argus](https://github.com/Perseus-Computing-LLC/argus): Append-only audit ledger with SHA-256 hash verification.
-- [perseus-benchmarks](https://github.com/Perseus-Computing-LLC/perseus-benchmarks): Benchmarks and stress tests.
+- [telamon-benchmarks](https://github.com/Perseus-Computing-LLC/telamon-benchmarks): Benchmarks and stress tests.
 
 ---
 

@@ -1,6 +1,6 @@
-# Perseus Claims & Benchmark Audit Ledger
+# Telamon Claims & Benchmark Audit Ledger
 
-> In accordance with Perseus engineering principles and the Agent Memory Atlas methodology, all architectural claims and benchmark figures in Perseus documentation must correspond to committed, runnable code with deterministic verification paths. Unsubstantiated claims are formally retired.
+> In accordance with Telamon engineering principles and the Agent Memory Atlas methodology, all architectural claims and benchmark figures in Telamon documentation must correspond to committed, runnable code with deterministic verification paths. Unsubstantiated claims are formally retired.
 
 ---
 
@@ -10,7 +10,7 @@ The following claims previously present in documentation or legacy monolithic ma
 
 | Component | Previous Claim | Disposition | Ground Truth & Correction |
 | :--- | :--- | :--- | :--- |
-| **External Evaluations** | LongMemEval-S 0.9111 MRR across 23,854 sessions | **RETIRED** | Standalone runner and multi-seed run reports are not yet committed to `perseus-benchmarks`. Historical monolithic runs achieved 73.8% (vanilla) and 79.0% (official-cot), but all headline metrics are withdrawn from READMEs until the modular harness and 3-seed artifacts are committed. |
+| **External Evaluations** | LongMemEval-S 0.9111 MRR across 23,854 sessions | **RETIRED** | Standalone runner and multi-seed run reports are not yet committed to `telamon-benchmarks`. Historical monolithic runs achieved 73.8% (vanilla) and 79.0% (official-cot), but all headline metrics are withdrawn from READMEs until the modular harness and 3-seed artifacts are committed. |
 | **Kibisis Crypto** | ChaCha20-Poly1305 with Argon2id | **CORRECTED** | Codebase implements AES-256-GCM authenticated encryption with PBKDF2HMAC-SHA256 (100,000 iterations). Documentation updated to reflect the actual cipher suite. |
 | **Kibisis Storage** | Envelope encryption claimed in docs | **REMEDIATED** | Previous `SQLiteMemoryVault` stored plaintext in `entities` and `entities_fts` without calling `AESGCMCryptoEnvelopeProvider`. Wire-level envelope encryption has now been integrated directly into the `put()` / `get()` storage path with FTS cleartext suppression. |
 | **Kibisis Tombstones**| Exact SHA-256 hash matching | **REMEDIATED** | Exact-match hashing allowed trivial bypass via casing/punctuation changes. Upgraded to canonicalized text normalization (Unicode NFKC, lowercase folding, punctuation removal, whitespace collapse). |
@@ -22,7 +22,7 @@ The following claims previously present in documentation or legacy monolithic ma
 
 ## 2. Active Verified Claims Matrix
 
-All metrics below are reproducible via `cargo run --release -p perseus-benchmarks` on bare-metal Linux x86_64:
+All metrics below are reproducible via `cargo run --release -p telamon-benchmarks` on bare-metal Linux x86_64:
 
 | System | Metric | Target / Claim | Verification Command | Status |
 | :--- | :--- | :--- | :--- | :--- |
