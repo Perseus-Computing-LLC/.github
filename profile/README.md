@@ -215,7 +215,7 @@ cargo run --release -p perseus-benchmarks
 
 - **Local first:** Runs fully on your hardware. No telemetry, no accounts, and no network calls.
 - **Inspectable:** Uses SQLite and SHA-256 hash chains so you can inspect state directly with standard tools.
-- **Permissive:** MIT licensed. You can embed these crates in commercial software or private infrastructure without friction.
+- **MIT Licensed:** Free for commercial, government, and proprietary use without copyleft restrictions or cloud fees.
 - **Composable:** Each crate is standalone. Use Harpe alone for prompt sizing, Kibisis for memory, or Argus for audit logs.
 
 ---
@@ -227,7 +227,7 @@ Perseus Computing maintains active compliance records and government self-assess
 - **Entity Identifiers:** CAGE: `22JC5` &middot; SAM.gov UEI: `PJS2LW7HAK35` &middot; NAICS: `541715` &middot; Austin, TX
 - **SPRS NIST SP 800-171 Assessment:** UID `SB00157695` &middot; Score **110/110** posted to SPRS (assessed 2026-08-04)
 - **CMMC Level 2 Final Assessment:** UID `S200069604` &middot; Score **110/110** self-classified (assessed 2026-08-06)
-- **DD2345 Defense Logistics JCP:** Application `#35743` pending official assignment
+- **DD2345 Defense Logistics JCP:** Approved and active through August 2031 (Certification No. `0092893`)
 - **Security Correspondence:** Direct vulnerability disclosures to [`security@perseuscomputing.com`](mailto:security@perseuscomputing.com)
 - **PGP Master Key Fingerprint:** `4A8E 2F1C 89B0 51E3 D6C2 7B94 F02A 198C 3E7D 5B12`
 
