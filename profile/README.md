@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Deterministic Context Budgeting &middot; Encrypted Agent Memory &middot; Cryptographic Audit Ledgers</strong><br>
-  Telamon Cognitive Infrastructure (TCI): High-assurance, local-first runtime primitives for autonomous AI systems by Perseus Computing LLC.
+  Telarch Cognitive Infrastructure (TCI): High-assurance, local-first runtime primitives for autonomous AI systems by Perseus Computing LLC.
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@
   <a href="https://crates.io/crates/harpe">Harpe Crate</a> &middot;
   <a href="https://crates.io/crates/kibisis">Kibisis Crate</a> &middot;
   <a href="https://crates.io/crates/argus-ledger">Argus Crate</a> &middot;
-  <a href="https://github.com/Perseus-Computing-LLC/telamon-benchmarks">Benchmarks</a>
+  <a href="https://github.com/Perseus-Computing-LLC/telarch-benchmarks">Benchmarks</a>
 </p>
 
 ---
@@ -30,9 +30,9 @@ When engineering teams move autonomous LLM agents from conversational prototypes
 
 ---
 
-## The Solution: Telamon Cognitive Infrastructure (TCI)
+## The Solution: Telarch Cognitive Infrastructure (TCI)
 
-Developed by **Perseus Computing LLC**, the **Telamon Suite** provides three decoupled, standalone infrastructure primitives engineered to eliminate these failure modes with mathematical determinism and cryptographic guarantees:
+Developed by **Perseus Computing LLC**, the **Telarch Suite** provides three decoupled, standalone infrastructure primitives engineered to eliminate these failure modes with mathematical determinism and cryptographic guarantees:
 
 | Primitives | Core Subsystem | Guarantees & Operational Impact | Crates.io | Documentation |
 | :--- | :--- | :--- | :--- | :--- |
@@ -68,9 +68,9 @@ Constrained Model Prompt   Consistent Agent State     Verifiable Audit Trail
 
 ---
 
-## Why Telamon Suite: Architectural Comparison
+## Why Telarch Suite: Architectural Comparison
 
-| Capability Dimension | Conventional Frameworks (Mem0, Letta, LangMem) | Telamon Suite (Harpe + Kibisis + Argus) | Practical Advantage |
+| Capability Dimension | Conventional Frameworks (Mem0, Letta, LangMem) | Telarch Suite (Harpe + Kibisis + Argus) | Practical Advantage |
 | :--- | :--- | :--- | :--- |
 | **Token Budgeting** | Heuristic truncation or unbudgeted overflow | Deterministic 0/1 knapsack constraint compiler | Prompts guaranteed within exact token bounds; zero API ceiling crashes. |
 | **Pruning Speed** | Secondary LLM summarization (~1–5 seconds) | Multi-policy priority scheduling (<35 microseconds) | Sub-millisecond latency; eliminates recurring LLM summarization costs. |
@@ -209,7 +209,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 ## Measured Empirical Telemetry
 
-All benchmarks are reproducible on bare-metal hardware via `cargo run --release -p telamon-benchmarks`:
+All benchmarks are reproducible on bare-metal hardware via `cargo run --release -p telarch-benchmarks`:
 
 | Subsystem | Benchmark Scenario | Measured Metric | Result | Operational Guarantee |
 | :--- | :--- | :--- | :--- | :--- |
@@ -227,7 +227,7 @@ All benchmarks are reproducible on bare-metal hardware via `cargo run --release 
 
 ## Security Posture & Compliance
 
-The Telamon Suite is engineered by **Perseus Computing LLC** for mission-critical, regulated, and air-gapped environments:
+The Telarch Suite is engineered by **Perseus Computing LLC** for mission-critical, regulated, and air-gapped environments:
 
 * **100% Local-First & Air-Gapped:** Zero external cloud dependencies, zero telemetry phone-home, and zero background daemons.
 * **CAGE Code:** `22JC5` &middot; **SAM.gov UEI:** `PJS2LW7HAK35` &middot; **NAICS:** `541715` (R&D in Physical, Engineering, and Life Sciences)
@@ -245,7 +245,7 @@ The Telamon Suite is engineered by **Perseus Computing LLC** for mission-critica
 * **[harpe](https://github.com/Perseus-Computing-LLC/harpe):** Context window token budgeting and deterministic priority eviction.
 * **[kibisis](https://github.com/Perseus-Computing-LLC/kibisis):** Encrypted local memory vault with atomic SWMR concurrency leases.
 * **[argus](https://github.com/Perseus-Computing-LLC/argus):** Tamper-evident audit ledger with continuous SHA-256 hash chaining.
-* **[telamon-benchmarks](https://github.com/Perseus-Computing-LLC/telamon-benchmarks):** Reproducible benchmark suite and stress tests.
+* **[telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks):** Reproducible benchmark suite and stress tests.
 
 ---
 

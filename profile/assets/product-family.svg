@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560" role="img" aria-labelledby="title desc">
-  <title id="title">Telamon Cognitive Infrastructure system</title>
+  <title id="title">Telarch Cognitive Infrastructure system</title>
   <desc id="desc">Harpe resolves verified context, Kibisis keeps durable memory, and Argus records verifiable evidence.</desc>
   <rect width="1600" height="560" fill="#101316"/>
   <path d="M0 82H1600M0 478H1600" stroke="#30363d" stroke-width="1"/>
   <path d="M76 0V560M1524 0V560" stroke="#30363d" stroke-width="1"/>
-  <text x="76" y="74" fill="#e9e3d8" font-family="Georgia, serif" font-size="28" letter-spacing="1">THE TELAMON SYSTEM</text>
+  <text x="76" y="74" fill="#e9e3d8" font-family="Georgia, serif" font-size="28" letter-spacing="1">THE TELARCH SYSTEM</text>
   <text x="76" y="108" fill="#9ba3aa" font-family="Arial, sans-serif" font-size="18">Three independent tools. One inspectable path from state to knowledge to evidence.</text>
 
   <path d="M324 302H590M1010 302H1276" stroke="#d5a544" stroke-width="3" stroke-linecap="round"/>
