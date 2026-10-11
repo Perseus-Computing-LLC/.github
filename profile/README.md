@@ -213,15 +213,16 @@ All benchmarks are reproducible on bare-metal hardware via `cargo run --release 
 
 | Subsystem | Benchmark Scenario | Measured Metric | Result | Operational Guarantee |
 | :--- | :--- | :--- | :--- | :--- |
-| **Harpe** | Small Context (10 items / 2k tokens) | Median Latency (p50) | **1.51 &micro;s** | Instantaneous knapsack assembly |
-| **Harpe** | Large Context (200 items / 40k tokens) | Median Latency (p50) | **31.89 &micro;s** | Deterministic priority pruning |
-| **Harpe** | Multi-Turn Pruning Horizon | Context Ceiling Reduction | **69.51%** | Prevents context window runaway |
-| **Kibisis** | Sequential Write Ingestion | Ingestion Throughput | **2,100,000+ writes/s** | Zero-contention local vault storage |
-| **Kibisis** | Concurrent Read/Write Leases (8 threads) | Lease Throughput | **1,560,000+ ops/s** | Atomic SWMR fencing under contention |
-| **Kibisis** | Network Partition Test (50% packet drop) | Split-Brain Errors | **0 errors** | 100% state convergence |
-| **Argus** | Continuous Event Chaining | Append Throughput | **~600,000 events/s** | ~1.67 &micro;s per SHA-256 block append |
-| **Argus** | Full Chain Verification Traversal | Verification Throughput | **~839,000 events/s** | Validates 10,000 events in ~11.9 ms |
-| **Argus** | Single-Bit Tamper Detection (Block #42) | Detection Latency | **46.50 &micro;s** | Immediate fail-closed abort on tamper |
+| **Harpe** | Small Context (10 items / 2k tokens) | Median Latency (p50) | **1.76 &micro;s** | Instantaneous knapsack assembly |
+| **Harpe** | Large Context (200 items / 40k tokens) | Median Latency (p50) | **35.74 &micro;s** | Deterministic priority pruning |
+| **Harpe** | 100,000-Turn Production Cost Curve | Token Reduction / Overruns | **84.77% reduction / 0 overruns** | 24.3 &micro;s/turn; $1,283.02 saved / 100k turns (Sonnet 3.5) |
+| **Kibisis** | Sequential Write Ingestion | Ingestion Throughput | **2,098,000+ writes/s** | Zero-contention local vault storage |
+| **Kibisis** | Multi-Agent SWMR Contention (16 workers) | Lease Throughput | **1,696,000+ ops/s** | 0.59 &micro;s latency; 0 split-brain conflicts |
+| **Kibisis** | Multi-Agent SWMR Contention (32 workers) | Lease Throughput | **1,776,000+ ops/s** | 0.56 &micro;s latency; 0 fencing token rollbacks |
+| **Argus** | 1,000,000 Sequential Merkle Events | Append Throughput | **632,170 events/s** | 1.58 &micro;s per SHA-256 block append |
+| **Argus** | 1,000,000 Event Full Chain Verification | Verification Throughput | **770,758 events/s** | Validates 1,000,000 events in 1.29 s |
+| **Argus** | Tamper Detection (Sequence #500,000) | Fail-Closed Detection | **640.48 ms** | Deterministic single-bit tamper detection |
+| **Swarm** | Network Partition Test (50% packet drop) | Gossip Sync Throughput | **599,631 msgs/s** | 100% state convergence, 0 split-brain errors |
 
 ---
 
