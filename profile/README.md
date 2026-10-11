@@ -253,6 +253,7 @@ The Telarch Suite is engineered by **Perseus Computing LLC** for mission-critica
 <p align="center">
   <a href="https://perseuscomputing.com">perseuscomputing.com</a> &middot;
   <a href="mailto:contact@perseuscomputing.com">contact@perseuscomputing.com</a> &middot;
+  <a href="mailto:support@perseuscomputing.com">support@perseuscomputing.com</a> &middot;
   <a href="mailto:security@perseuscomputing.com">security@perseuscomputing.com</a>
 </p>
 
