@@ -30,8 +30,6 @@ Medians of three runs on one shared Linux x86_64 machine (rustc 1.97.1), synthet
 - **Leases coordinate threads inside one process.** They are not a distributed lock service.
 - **Argus detects edits.** A fully rewritten chain still verifies, so keep the newest hash somewhere an attacker cannot write.
 
-We keep a [list of earlier claims we retired](https://telarch.ai/evidence#retired) after checking them against the code.
-
 ## Company
 
 Perseus Computing LLC · Austin, Texas · CAGE 22JC5 · UEI PJS2LW7HAK35 · NAICS 541715
