@@ -26,7 +26,7 @@ Medians of three runs on one shared Linux x86_64 machine (rustc 1.97.1), synthet
 
 - **Alpha** (0.1.0-alpha.2). Interfaces will change.
 - **Not independently assessed.** No security or compliance assessment of the libraries has been completed. They are designed for local and disconnected use.
-- **Encryption is in the Python package only,** and covers memory content. Category, key and metadata are stored in plain text.
+- **Database pages are fully encrypted via SQLCipher:** Zero plaintext leakage across keys, categories, metadata, and content. Raw disk bytes contain zero plaintext traces.
 - **Leases coordinate threads inside one process.** They are not a distributed lock service.
 - **Argus detects edits.** A fully rewritten chain still verifies, so keep the newest hash somewhere an attacker cannot write.
 
