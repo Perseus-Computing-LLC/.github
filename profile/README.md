@@ -5,7 +5,7 @@ We build **Telarch**: open-source libraries that control what AI agents read and
 | Library | What it does | Source |
 |---|---|---|
 | **Harpe** | Keeps each model call under a token ceiling. Highest priority first, while it fits. Pinned items always stay. | [harpe](https://github.com/Perseus-Computing-LLC/harpe) · [docs](https://docs.rs/harpe) |
-| **Kibisis** | Local agent memory. One writer per resource, with numbered leases that only go up. The Python package keeps the vault file encrypted on disk. | [kibisis](https://github.com/Perseus-Computing-LLC/kibisis) · [docs](https://docs.rs/kibisis) |
+| **Kibisis** | Local agent memory. One writer per resource, with numbered leases that only go up. The Python package (`kibisis` on PyPI) keeps the vault file encrypted on disk. | [kibisis](https://github.com/Perseus-Computing-LLC/kibisis) · [docs](https://docs.rs/kibisis) |
 | **Argus** | A SHA-256 hash chain of agent actions. Editing any past entry breaks every later one and shows where. | [argus](https://github.com/Perseus-Computing-LLC/argus) · [docs](https://docs.rs/argus-ledger) |
 
 **Site:** [telarch.ai](https://telarch.ai) · **Evidence:** [telarch.ai/evidence](https://telarch.ai/evidence) · **Benchmarks:** [telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks)
