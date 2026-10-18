@@ -1,0 +1,39 @@
+name: Benchmark Dispute or Methodology Inquiry
+description: Challenge or request replication assistance for a published Telarch claim
+title: "claim-dispute: "
+labels: ["claims", "benchmarks"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Every number published by Perseus Computing must be reproducible from source.
+        If a published claim does not reproduce within its stated range, please file details below.
+  - type: input
+    id: claim_id
+    attributes:
+      label: Claim Identifier
+      description: What claim ID from claims.json or evidence page is disputed?
+      placeholder: "e.g. harpe_small_p50_us, kib_split_brain, argus_tamper_ms"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Target Environment
+      description: Describe the hardware, OS, toolchain version, and CPU architecture used for your reproduction attempt.
+    validations:
+      required: true
+  - type: textarea
+    id: discrepancy
+    attributes:
+      label: Observed Result vs Stated Range
+      description: What numbers did your run produce, and how does it diverge from the range in claims.json?
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Reproduction Logs / Raw Output
+      description: Paste the terminal output from `make bench` or the specific binary.
+    validations:
+      required: true
