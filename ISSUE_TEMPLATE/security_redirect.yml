@@ -1,0 +1,21 @@
+name: Security Vulnerability Report
+description: Instructions for reporting security issues confidentially
+title: "Security: Please report privately"
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### Confidential Security Reports
+        
+        **DO NOT file public GitHub issues for security vulnerabilities.**
+        
+        Please send details to:
+        **`contact@perseuscomputing.com`**
+        
+        We commit to:
+        - Acknowledging receipt within **48 hours**.
+        - Providing triage and initial remediation timeline within **5 business days**.
+        - Coordinated patch release within **14 calendar days** for high/critical vulnerabilities.
+        
+        See [SECURITY.md](../SECURITY.md) for full policy details.

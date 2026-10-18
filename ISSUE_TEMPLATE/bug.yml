@@ -1,0 +1,43 @@
+name: Bug Report
+description: Report a reproducible defect in Telarch libraries
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Please ensure no proprietary data, secrets, or confidential API keys are pasted.
+  - type: input
+    id: component
+    attributes:
+      label: Affected Component
+      description: Which library or package is affected?
+      placeholder: "harpe, kibisis, argus-ledger, or telarch-benchmarks"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / Commit
+      description: Which release or commit hash are you using?
+      placeholder: "0.1.0-alpha.2, ca3dff7, etc."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction Steps
+      description: Minimal commands or code sample to reproduce the issue.
+      placeholder: |
+        1. In a fresh environment...
+        2. Run...
+        3. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have happened according to documented invariants?
+    validations:
+      required: true
