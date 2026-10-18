@@ -12,23 +12,23 @@ We build **Telarch**: open-source libraries that control what AI agents read and
 
 ## What we measured
 
-Medians of three runs on one shared Linux x86_64 machine (rustc 1.97.1), synthetic data. Method, spread and reproduce commands are on the [evidence page](https://telarch.ai/evidence).
+From the reports committed in [telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks) (commit `ca3dff7`), synthetic data, Linux x86_64, rustc 1.97.1. Three fresh re-runs, the method and the reproduce commands are on the [evidence page](https://telarch.ai/evidence).
 
 | | Result | Scope |
 |---|---|---|
 | Harpe | 78.3% fewer tokens, 0 turns over the ceiling | 100,000 simulated turns, 1,200-token ceiling |
-| Harpe | 1.76 µs median (10 items), 35.74 µs median (200 items) | In-memory, one call |
+| Harpe | 1.88 µs median (10 items), 41.16 µs median (200 items) | In-memory, one call |
 | Kibisis | 0 moments with two holders, in 64,000 lease attempts | 16 and 32 competing threads, one process |
-| Argus | 632,170 appends per second, 770,758 verifications per second | 1,000,000 events, in memory |
-| Argus | An edit at event 500,000 found in 640.48 ms | Walk from event 1 |
+| Argus | 809,697 appends per second, 2,433,053 verifications per second | 1,000,000 events, in memory |
+| Argus | An edit at event 500,000 found in 185.35 ms | Walk from event 1 |
 
 ## What Telarch is not, today
 
 - **Alpha** (0.1.0-alpha.2). Interfaces will change.
 - **Not independently assessed.** No security or compliance assessment of the libraries has been completed. They are designed for local and disconnected use.
-- **Encryption at rest is in the Python Kibisis package only.** It encrypts the whole database file (SQLCipher) and needs a passphrase. In our test, no category, key or content appeared in the raw file. The Rust crate keeps memory in RAM and does not encrypt.
+- **Encryption at rest is in the Python Kibisis package only.** It encrypts the whole database file (SQLCipher) and needs a passphrase. In our test, no category, key or content appeared in the raw file. The published Rust crate keeps memory in RAM and does not encrypt.
 - **Leases coordinate threads inside one process.** They are not a distributed lock service.
-- **Argus detects edits.** A fully rewritten chain still verifies, so keep the newest hash somewhere an attacker cannot write.
+- **Argus detects edits.** A fully rewritten chain still verifies, so keep the newest hash somewhere an attacker cannot write. Anchored verification and optional signing are on `main`, not yet released.
 
 ## Company
 
