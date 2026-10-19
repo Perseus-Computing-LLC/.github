@@ -6,7 +6,7 @@ We build **[Telarch](https://telarch.ai)**: three small open-source libraries th
 
 | Library | What it does | Learn more |
 |---|---|---|
-| **[Harpe](https://github.com/Perseus-Computing-LLC/harpe)** | Fits every model call inside a token budget: pinned items first, then by priority or recency while they fit, with a report of what was kept and dropped. | [telarch.ai/harpe](https://telarch.ai/harpe) |
+| **[Harpe](https://github.com/Perseus-Computing-LLC/harpe)** | Chooses what goes into each model call under a token budget: pinned items first, then by priority or recency while they fit, with a report of what was kept and dropped. | [telarch.ai/harpe](https://telarch.ai/harpe) |
 | **[Kibisis](https://github.com/Perseus-Computing-LLC/kibisis)** | Local, encrypted memory for agents: recall by scope, trust state and date, tombstones for values that must not come back, and one writer at a time with fencing tokens. | [telarch.ai/kibisis](https://telarch.ai/kibisis) |
 | **[Argus](https://github.com/Perseus-Computing-LLC/argus)** | A record of what the agent did that shows if anyone changed it: a linear SHA-256 hash chain that names the first edited event. | [telarch.ai/argus](https://telarch.ai/argus) |
 
