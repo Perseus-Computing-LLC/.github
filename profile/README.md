@@ -12,11 +12,11 @@ We build **[Telarch](https://telarch.ai)**: three small open-source libraries th
 
 ## Measured, with raw data
 
-Medians of 5 runs of [telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks) at release tag v0.1.0-alpha.5, with synthetic data on one shared server. Every run, its range and the command that reproduces it are on [telarch.ai/evidence](https://telarch.ai/evidence).
+Medians of 5 runs of [telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks) at release tag v0.1.0-alpha.7, with synthetic data on one EC2 m8azn.metal-12xl bare-metal server. Every run, its range and the command that reproduces it are on [telarch.ai/evidence](https://telarch.ai/evidence).
 
 - **78.3%** fewer tokens sent to the model over 100,000 simulated agent turns, with 0 turns over the 1,200-token budget (Harpe).
 - **0** times two holders had the same lease, in 64,000 contended attempts from 16 and 32 threads (Kibisis).
-- **182.9 ms** to find one edited event among 1,000,000 (Argus).
+- **154.5 ms** to find one edited event among 1,000,000 (Argus).
 
 ## Plainly
 
