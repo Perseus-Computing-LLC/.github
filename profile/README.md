@@ -2,11 +2,11 @@
 
 **Infrastructure for AI agents you can inspect.**
 
-We build **[Telarch](https://telarch.ai)**: three small open-source libraries that control what an AI agent reads and remembers, and prove what it did, plus an app that gives ChatGPT and Codex the same tools. The libraries run on your own hardware, contain no network code, and every benchmark figure we publish comes with its raw data.
+We build **[Telarch](https://telarch.ai)**: three small open-source libraries that control what an AI agent reads and remembers, and prove what it did, plus an app that gives ChatGPT and Codex the same tools. The libraries run on your own hardware, make no outbound network connections, and every benchmark figure we publish comes with its raw data.
 
 ## What's new
 
-- **Telarch in ChatGPT and Codex** (telarch-openai-plugin v0.1.0, 4 Nov 2026). An MCP server at telarch.ai/mcp with seven tools: fit context into a token budget, decide which memories are current, check a writer's lease, and seal or verify an audit chain. In review with OpenAI for ChatGPT; the Codex plugin installs from GitHub today.
+- **Telarch is in the ChatGPT plugin directory** (telarch-openai-plugin v0.1.0, 16 Nov 2026). OpenAI approved the Telarch plugin for the directory that ChatGPT and Codex share. It adds seven tools served from telarch.ai/mcp: fit context into a token budget, decide which memories are current, check a writer's lease, and seal or verify an audit chain.
 - **Autopoiesis is open source** (autopoiesis v0.1.0, 4 Nov 2026). Early research code for software that repairs its own recurring failures. Version 0.1.0 has the telemetry grouping, Git worktree sandboxes and test gate; the step that writes fixes is not built yet.
 - **Two-pass context selection** (harpe 0.1.0-alpha.12, 3 Nov 2026). The model first sees a one-line description of every candidate, then asks for the bodies it needs; Harpe expands them inside the budget and refuses what does not fit. Each selection can write one receipt to an Argus ledger.
 - **Portable knowledge bundles** (kibisis 0.1.0-alpha.13, 2 Nov 2026). okf-export writes allowlisted vault rows to an Open Knowledge Format bundle, under an export profile that denies everything else. okf-import brings a bundle back in as unverified candidates. 0.1.0-alpha.14 adds the rule that matches a query to the rows it names.
@@ -22,8 +22,8 @@ We build **[Telarch](https://telarch.ai)**: three small open-source libraries th
 ### Use it
 
 - In Rust or Python, each library is a crate on crates.io and a package on PyPI. See the [quickstart](https://telarch.ai/#quickstart).
-- In ChatGPT, the Telarch app ([source](https://github.com/Perseus-Computing-LLC/telarch-openai-plugin)) serves seven tools from `https://telarch.ai/mcp`. It is in review with OpenAI and not listed in ChatGPT yet; until then, add the server in ChatGPT developer mode.
-- In Codex, add the repository as a plugin marketplace, then add a plugin:
+- In ChatGPT, the Telarch app ([source](https://github.com/Perseus-Computing-LLC/telarch-openai-plugin)) serves seven tools from `https://telarch.ai/mcp`. It is in the [ChatGPT plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6aea976fdfb08191bda018482c7bc72e): open Plugins in ChatGPT, search for Telarch and install it.
+- In Codex, the same directory lists it (Plugins in the ChatGPT desktop app, or `/plugins` in Codex CLI). To install from GitHub instead, add the repository as a plugin marketplace, then add a plugin:
 
   ```sh
   codex plugin marketplace add Perseus-Computing-LLC/telarch-openai-plugin
@@ -42,11 +42,11 @@ pip install "git+https://github.com/Perseus-Computing-LLC/autopoiesis"
 
 ## Measured, with raw data
 
-Medians of 5 runs of [telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks) at release tag v0.1.0-alpha.11, with synthetic data on one EC2 m8azn.metal-12xl bare-metal server. Every run, its range and the command that reproduces it are on [telarch.ai/evidence](https://telarch.ai/evidence).
+Medians of 5 runs of [telarch-benchmarks](https://github.com/Perseus-Computing-LLC/telarch-benchmarks) at release tag v0.1.0-alpha.12, with synthetic data on one EC2 m8azn.metal-12xl bare-metal server. Every run, its range and the command that reproduces it are on [telarch.ai/evidence](https://telarch.ai/evidence).
 
 - **78.3%** fewer tokens sent to the model over 100,000 simulated agent turns, with 0 turns over the 1,200-token budget (Harpe).
 - **0** times two holders had the same lease, in 64,000 contended attempts from 16 and 32 threads (Kibisis).
-- **197.2 ms** to find one edited event among 1,000,000 (Argus).
+- **196.9 ms** to find one edited event among 1,000,000 (Argus).
 
 ### Standard long-term memory evaluations
 
@@ -67,7 +67,7 @@ A smaller comparison against BM25 retrieval and our own emulation of a flat-fact
 
 ## Plainly
 
-- The libraries are alpha (latest releases Harpe 0.1.0-alpha.12 · Kibisis 0.1.0-alpha.14 · Argus 0.1.0-alpha.8), and interfaces will change. The figures above were measured at Harpe 0.1.0-alpha.11 · Kibisis 0.1.0-alpha.12 · Argus 0.1.0-alpha.8.
+- The libraries are alpha (latest releases Harpe 0.1.0-alpha.12 · Kibisis 0.1.0-alpha.16 · Argus 0.1.0-alpha.8), and interfaces will change. The figures above were measured at Harpe 0.1.0-alpha.12 · Kibisis 0.1.0-alpha.16 · Argus 0.1.0-alpha.8.
 - No independent security review or certification of the libraries has been completed.
 - Encryption at rest is in the Python Kibisis package. The Rust crate keeps memory in RAM and does not encrypt it.
 - Leases coordinate one machine. They are not a network lock service.
